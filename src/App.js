@@ -8,17 +8,10 @@ const speedOptions = [
   {value: "MB", label: "MB"},
   {value: "KB", label: "KB"},
 ]
-const timeOptions = [
-  {value: "Sec", label: "Sec"},
-  {value: "Mins", label: "Mins"},
-  {value: "Hours", label: "Hours"},
-  {value: "Days", label: "Days"},
-]
 
 function App() {
   const [download, setDownload] = useState({speed: 0, size: 0})
   const [estimate, setEstimate] = useState()
-  const [downloadTime, setDownloadTime] = useState({time: "Hours"})
   const [downloadType, setDownloadType] = useState({speed: "MB", size: "GB"})
 
   const calcSpeed = (speed) => {
@@ -42,19 +35,23 @@ function App() {
   }
 
   const calcTime = (time) => {
-    return (
-      time /
-      (downloadTime.time === "Mins" ? 60 : 1) /
-      (downloadTime.time === "Hours" ? 60 * 60 : 1) /
-      (downloadTime.time === "Days" ? 60 * 60 * 24 : 1)
-    )
+    let hours = Math.floor(time / 3600)
+    let minutes = Math.floor((time - hours * 3600) / 60)
+    let seconds = Math.floor(time - hours * 3600 - minutes * 60)
+
+    return {
+      seconds,
+      minutes,
+      hours,
+    }
   }
 
   // total time to download.
   const calculate = () => {
-    const time = calcTime(timeLength()).toFixed(2)
+    const time = calcTime(timeLength())
     setEstimate(time)
   }
+
   return (
     <div className="wrapper">
       <header className="title"> How Long To Download</header>
@@ -112,20 +109,8 @@ function App() {
 
       <div className="time-container">
         <div className="result">
-          <label className="time-text">{estimate}</label>
+          <label className="time-text">{`Hrs: ${estimate?.hours} / Mins: ${estimate?.minutes} / sec: ${estimate?.seconds}`}</label>
         </div>
-        <Select
-          className="option"
-          options={timeOptions}
-          defaultValue={timeOptions[2]}
-          isSearchable={false}
-          onChange={(e) =>
-            setDownloadTime((curr) => ({
-              ...curr,
-              time: e.value,
-            }))
-          }
-        />
       </div>
       <button onClick={() => calculate()}>calculate</button>
     </div>
