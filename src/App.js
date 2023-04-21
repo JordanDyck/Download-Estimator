@@ -1,13 +1,9 @@
 import {useState} from "react"
-import Select from "react-select"
 
 import "./App.scss"
+import Estimator from "./Components/Estimator"
 
-const speedOptions = [
-  {value: "GB", label: "GB"},
-  {value: "MB", label: "MB"},
-  {value: "KB", label: "KB"},
-]
+// dropdown options
 
 function App() {
   const [download, setDownload] = useState({speed: 0, size: 0})
@@ -53,66 +49,13 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
-      <header className="title"> How Long To Download</header>
-      <div className="size-container">
-        <input
-          className="size-input"
-          type="number"
-          placeholder="Download Size..."
-          onChange={(e) =>
-            setDownload((curr) => ({
-              ...curr,
-              size: e.target.value,
-            }))
-          }
-        />
-        <Select
-          className="option"
-          options={speedOptions}
-          defaultValue={speedOptions[0]}
-          isSearchable={false}
-          onChange={(e) =>
-            setDownloadType((curr) => ({
-              ...curr,
-              size: e.value,
-            }))
-          }
-        />
-      </div>
-
-      <div className="speed-container">
-        <input
-          className="speed-input"
-          type="number"
-          placeholder="Download speed..."
-          onChange={(e) =>
-            setDownload((curr) => ({
-              ...curr,
-              speed: e.target.value,
-            }))
-          }
-        />
-        <Select
-          className="option"
-          options={speedOptions}
-          defaultValue={speedOptions[1]}
-          isSearchable={false}
-          onChange={(e) =>
-            setDownloadType((curr) => ({
-              ...curr,
-              speed: e.value,
-            }))
-          }
-        />
-      </div>
-
-      <div className="time-container">
-        <div className="result">
-          <label className="time-text">{`Hrs: ${estimate?.hours} / Mins: ${estimate?.minutes} / sec: ${estimate?.seconds}`}</label>
-        </div>
-      </div>
-      <button onClick={() => calculate()}>calculate</button>
+    <div className="App">
+      <Estimator
+        setDownload={setDownload}
+        setDownloadType={setDownloadType}
+        calculate={calculate}
+        estimate={estimate}
+      />
     </div>
   )
 }
