@@ -47,10 +47,10 @@ function App() {
     const time = calcTime(timeLength())
     setEstimate(time)
   }
-
   return (
     <div className="App">
       <Estimator
+        download={download}
         setDownload={setDownload}
         setDownloadType={setDownloadType}
         calculate={calculate}

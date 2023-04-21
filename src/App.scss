@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 $desktop: 950px;
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Inter, sans-serif;
+  font-family: Oswald, sans-serif;
 }
 
 .wrapper {
@@ -21,8 +19,10 @@ body {
   .title {
     display: flex;
     justify-content: center;
+
     font-size: clamp(28px, 7vw, 50px);
     text-align: center;
+    margin-bottom: 20px;
   }
   .size-container,
   .speed-container {
@@ -33,8 +33,10 @@ body {
     .size-input,
     .speed-input {
       width: 100%;
+      height: 34px;
       max-width: 500px;
       font-size: 30px;
+      font-family: Inter, sans-serif;
       text-align: center;
     }
     input::-webkit-outer-spin-button,
@@ -43,7 +45,10 @@ body {
       margin: 0;
     }
     input::placeholder {
-      font-size: clamp(10px, 5vw, 30px);
+      font-size: clamp(15px, 5vw, 30px);
+    }
+    input:focus::placeholder {
+      color: transparent;
     }
   }
 
@@ -70,7 +75,8 @@ body {
     }
   }
   .dropdown-menu {
-    min-width: 85px;
+    min-width: 83px;
+    font-size: 20px;
     .css-1dimb5e-singleValue {
       color: #007cb2;
     }
@@ -79,7 +85,8 @@ body {
   .calc-btn {
     font-size: 30px;
     margin-top: 20px;
-    padding: 3px;
+    font-family: Inter, sans-serif;
+    padding: 3px 8px;
     border-radius: 10px;
   }
 }

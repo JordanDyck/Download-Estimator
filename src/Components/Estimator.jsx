@@ -6,7 +6,14 @@ const speedOptions = [
   {value: "KB", label: "KB"},
 ]
 
-const Estimator = ({setDownload, setDownloadType, calculate, estimate}) => {
+const Estimator = ({
+  download,
+  setDownload,
+  setDownloadType,
+  calculate,
+  estimate,
+}) => {
+  console.log(download)
   return (
     <div className="wrapper">
       <div className="title-container">
@@ -20,7 +27,7 @@ const Estimator = ({setDownload, setDownloadType, calculate, estimate}) => {
           onChange={(e) =>
             setDownload((curr) => ({
               ...curr,
-              size: e.target.value,
+              size: +e.target.value,
             }))
           }
         />
@@ -46,7 +53,7 @@ const Estimator = ({setDownload, setDownloadType, calculate, estimate}) => {
           onChange={(e) =>
             setDownload((curr) => ({
               ...curr,
-              speed: e.target.value,
+              speed: +e.target.value,
             }))
           }
         />
@@ -77,7 +84,11 @@ const Estimator = ({setDownload, setDownloadType, calculate, estimate}) => {
           </label>
         </div>
       </div>
-      <button className="calc-btn" onClick={() => calculate()}>
+      <button
+        className="calc-btn"
+        disabled={download.size === 0 || download.speed === 0}
+        onClick={() => calculate()}
+      >
         Calculate
       </button>
     </div>
