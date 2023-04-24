@@ -13,7 +13,6 @@ const Estimator = ({
   calculate,
   estimate,
 }) => {
-  console.log(download)
   return (
     <div className="wrapper">
       <div className="title-container">
@@ -73,15 +72,11 @@ const Estimator = ({
 
       <div className="time-container">
         <div className="result">
+          <label className="time-text">{`${estimate?.hours || 0}h :`}</label>
           <label className="time-text">
-            {estimate?.hours ? `${estimate.hours}h.` : "0h."}
+            {`${estimate?.minutes || "0"}m :`}
           </label>
-          <label className="time-text">
-            {estimate?.minutes ? `${estimate?.minutes}m.` : "0m."}
-          </label>
-          <label className="time-text">
-            {estimate?.seconds ? `${estimate?.seconds}s.` : "0s."}
-          </label>
+          <label className="time-text">{`${estimate?.seconds || "0"}s`}</label>
         </div>
       </div>
       <button

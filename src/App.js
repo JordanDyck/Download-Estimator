@@ -2,8 +2,7 @@ import {useState} from "react"
 
 import "./App.scss"
 import Estimator from "./Components/Estimator"
-
-// dropdown options
+import Info from "./Components/Info"
 
 function App() {
   const [download, setDownload] = useState({speed: 0, size: 0})
@@ -56,6 +55,7 @@ function App() {
         calculate={calculate}
         estimate={estimate}
       />
+      <Info />
     </div>
   )
 }

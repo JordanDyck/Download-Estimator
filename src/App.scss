@@ -12,9 +12,8 @@ $desktop: 950px;
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
-  height: 100dvh;
 
   .title {
     display: flex;
@@ -45,7 +44,7 @@ $desktop: 950px;
       margin: 0;
     }
     input::placeholder {
-      font-size: clamp(15px, 5vw, 30px);
+      font-size: clamp(15px, 4vw, 25px);
     }
     input:focus::placeholder {
       color: transparent;
@@ -88,5 +87,17 @@ $desktop: 950px;
     font-family: Inter, sans-serif;
     padding: 3px 8px;
     border-radius: 10px;
+  }
+}
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  justify-content: center;
+  padding: 20px;
+
+  span {
+    font-weight: bold;
   }
 }
