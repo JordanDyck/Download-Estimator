@@ -7,7 +7,7 @@ const Info = () => {
         First you need to figure out the <span> Speed </span>and
         <span> Size</span> of the file,
         <span> Kilobyte(KB), Megabyte(MB), Gigabyte(GB). </span>
-        Each one is 1024 more than the last, staring with Bytes.
+        Each one is 1024 more than the last, starting with Bytes.
         <span> 1KB = 1024B, 1MB = 1024KB, 1GB = 1024MB.</span>
       </p>
       <br />
@@ -21,9 +21,9 @@ const Info = () => {
       <p>
         To make that time more readable, we need to split it up into Seconds,
         Minutes, and Hours. To do this we just take the total time (5,120) and
-        divide it by <span> 3600</span> to convert it to <span>Hours (1)</span>.
+        divide it by <span> 3600</span> to convert it to <span>Hours(1)</span>.
         Then we do (time - hours x 3600) / 60 to get the
-        <span> Minutes(25)</span>. Then (time - hours * 3600 - minutes * 60) to
+        <span> Minutes(25)</span>. Then (time - hours x 3600 - minutes x 60) to
         get the <span> Seconds(20)</span>.
       </p>
       <br />

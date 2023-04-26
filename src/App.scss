@@ -1,34 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
-$desktop: 950px;
+$mobile: 950px;
 
 * {
   margin: 0;
   padding: 0;
   font-family: Oswald, sans-serif;
 }
-
+body {
+  background: linear-gradient(
+    150deg,
+    rgba(92, 255, 248, 1) 37%,
+    rgba(255, 255, 255, 1) 37%
+  );
+  height: 100dvh;
+  overflow: hidden;
+  @media (width < 1420px) {
+    background: linear-gradient(
+      180deg,
+      rgba(92, 255, 248, 1) 41%,
+      rgba(255, 255, 255, 1) 41%
+    );
+  }
+  @media (width < 552px) {
+    background: linear-gradient(
+      180deg,
+      rgba(92, 255, 248, 1) 37%,
+      rgba(255, 255, 255, 1) 37%
+    );
+  }
+}
 .wrapper {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
+  margin: 100px 0 0 170px;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 0 0;
+  }
 
   .title {
-    display: flex;
-    justify-content: center;
-
     font-size: clamp(28px, 7vw, 50px);
-    text-align: center;
-    margin-bottom: 20px;
+    margin-left: 80px;
+    @media (max-width: $mobile) {
+      display: flex;
+      margin-bottom: 20px;
+      margin-left: 0;
+      justify-content: center;
+      text-align: center;
+    }
   }
   .size-container,
   .speed-container {
     display: flex;
-    justify-content: center;
     width: 80%;
     margin: 5px;
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
     .size-input,
     .speed-input {
       width: 100%;
@@ -83,21 +113,35 @@ $desktop: 950px;
 
   .calc-btn {
     font-size: 30px;
-    margin-top: 20px;
     font-family: Inter, sans-serif;
+    margin: 12px 177px;
     padding: 3px 8px;
     border-radius: 10px;
+    @media (max-width: $mobile) {
+      margin-top: 20px;
+    }
   }
 }
 .info-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
   justify-content: center;
+  margin-left: clamp(0px, 11vw, 164px);
   padding: 20px;
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
 
   span {
     font-weight: bold;
+  }
+  p {
+    max-width: 84ch;
+    font-size: 19px;
   }
 }
