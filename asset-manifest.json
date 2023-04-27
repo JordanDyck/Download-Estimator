@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Download-Estimator/static/css/main.cf67c26d.css",
+    "main.js": "/Download-Estimator/static/js/main.43bb80db.js",
+    "index.html": "/Download-Estimator/index.html",
+    "main.cf67c26d.css.map": "/Download-Estimator/static/css/main.cf67c26d.css.map",
+    "main.43bb80db.js.map": "/Download-Estimator/static/js/main.43bb80db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf67c26d.css",
+    "static/js/main.43bb80db.js"
+  ]
+}
