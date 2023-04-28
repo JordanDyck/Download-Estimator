@@ -12,8 +12,8 @@ function App() {
   const calcSpeed = (speed) => {
     return (
       speed *
-      (downloadType.speed === "MB" ? 1024 : 1) *
-      (downloadType.speed === "GB" ? 1024 * 1024 : 1)
+      (downloadType.speed === "MB/s" ? 1024 : 1) *
+      (downloadType.speed === "GB/s" ? 1024 * 1024 : 1)
     )
   }
 

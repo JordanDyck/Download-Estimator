@@ -15,7 +15,7 @@ const Info = () => {
         To calculate the total time it would take to download, you just divide
         the
         <span> Size </span>
-        by the <span> Time</span>. Ex. 50GB / 10MB = 5,120.
+        by your<span> Bandwidth</span>. Ex. 50GB / 10MB = 5,120.
       </p>
       <br />
       <p>

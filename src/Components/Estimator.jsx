@@ -1,9 +1,14 @@
 import Select from "react-select"
 
-const speedOptions = [
+const sizeOptions = [
   {value: "GB", label: "GB"},
   {value: "MB", label: "MB"},
   {value: "KB", label: "KB"},
+]
+const speedOptions = [
+  {value: "GB/s", label: "GB/s"},
+  {value: "MB/s", label: "MB/s"},
+  {value: "KB/s", label: "KB/s"},
 ]
 
 const Estimator = ({
@@ -32,8 +37,8 @@ const Estimator = ({
         />
         <Select
           className="dropdown-menu"
-          options={speedOptions}
-          defaultValue={speedOptions[0]}
+          options={sizeOptions}
+          defaultValue={sizeOptions[0]}
           isSearchable={false}
           onChange={(e) =>
             setDownloadType((curr) => ({
