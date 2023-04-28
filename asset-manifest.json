@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Download-Estimator/static/css/main.cf67c26d.css",
-    "main.js": "/Download-Estimator/static/js/main.43bb80db.js",
+    "main.css": "/Download-Estimator/static/css/main.605ae106.css",
+    "main.js": "/Download-Estimator/static/js/main.6a1e227d.js",
     "index.html": "/Download-Estimator/index.html",
-    "main.cf67c26d.css.map": "/Download-Estimator/static/css/main.cf67c26d.css.map",
-    "main.43bb80db.js.map": "/Download-Estimator/static/js/main.43bb80db.js.map"
+    "main.605ae106.css.map": "/Download-Estimator/static/css/main.605ae106.css.map",
+    "main.6a1e227d.js.map": "/Download-Estimator/static/js/main.6a1e227d.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf67c26d.css",
-    "static/js/main.43bb80db.js"
+    "static/css/main.605ae106.css",
+    "static/js/main.6a1e227d.js"
   ]
 }
