@@ -11,30 +11,16 @@ $mobile: 950px;
 body {
   background-repeat: no-repeat;
   height: 100dvh;
+  overflow: hidden;
 
   background: linear-gradient(
     150deg,
     rgba(92, 255, 248, 1) 37%,
-    rgba(255, 255, 255, 1) 37%
+    rgba(255, 255, 255, 1) 37.2%
   );
-  overflow: hidden;
+
   @media (width <= $mobile) {
     overflow: auto;
-  }
-  @media (width < 1420px) {
-    background: linear-gradient(
-      180deg,
-      rgba(92, 255, 248, 1) 40%,
-      rgba(255, 255, 255, 1) 40%
-    );
-    background-repeat: no-repeat;
-  }
-  @media (width < 414px) {
-    background: linear-gradient(
-      180deg,
-      rgba(92, 255, 248, 1) 49%,
-      rgba(255, 255, 255, 1) 49%
-    );
     background-repeat: no-repeat;
   }
 }

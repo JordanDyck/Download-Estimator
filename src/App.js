@@ -7,7 +7,7 @@ import Info from "./Components/Info"
 function App() {
   const [download, setDownload] = useState({speed: 0, size: 0})
   const [estimate, setEstimate] = useState()
-  const [downloadType, setDownloadType] = useState({speed: "MB", size: "GB"})
+  const [downloadType, setDownloadType] = useState({speed: "MB/s", size: "GB"})
 
   const calcSpeed = (speed) => {
     return (
