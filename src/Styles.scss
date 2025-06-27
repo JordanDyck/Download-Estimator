@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+$mobile: 950px;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Oswald, sans-serif;
+}
+body {
+  background-repeat: no-repeat;
+  height: 100dvh;
+  overflow: hidden;
+
+  background: linear-gradient(
+    150deg,
+    rgba(92, 255, 248, 1) 37%,
+    rgba(255, 255, 255, 1) 37.2%
+  );
+
+  @media (width <= $mobile) {
+    overflow: auto;
+    background-repeat: no-repeat;
+  }
+}
+
+.wrapper {
+  margin: 100px 0 0 150px;
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 54px 0 0 0;
+  }
+
+  .title {
+    font-size: 50px;
+    margin-left: 80px;
+    @media (max-width: $mobile) {
+      display: flex;
+      margin-bottom: 20px;
+      margin-left: 0;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .size-container,
+  .speed-container {
+    display: flex;
+    width: 80%;
+    margin: 3px 0px 0px 78px;
+    @media (max-width: $mobile) {
+      margin: 5px;
+      justify-content: center;
+    }
+    .size-input,
+    .speed-input {
+      width: 100%;
+      height: 34px;
+      max-width: 313px;
+      font-size: 30px;
+      font-family: Inter, sans-serif;
+      text-align: center;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input::placeholder {
+      font-size: clamp(15px, 4vw, 25px);
+    }
+    input:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  .time-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    max-width: 500px;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(
+      0.25turn,
+      rgb(255 255 255 / 0%),
+      rgb(0 0 0),
+      rgb(56 2 155 / 0%)
+    );
+    border-image-slice: 1;
+
+    .result {
+      display: flex;
+      gap: 10px;
+      .time-text {
+        font-size: 30px;
+      }
+    }
+  }
+  .dropdown-menu {
+    min-width: 98px;
+    font-size: 20px;
+    text-align: center;
+    .css-1dimb5e-singleValue {
+      color: #007cb2;
+    }
+  }
+
+  .calc-btn {
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    margin: 12px 177px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background: #dbdbdb;
+    }
+    &:disabled,
+    :hover {
+      cursor: initial;
+      background-color: #ffffff61;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 20px;
+    }
+  }
+}
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: clamp(0px, 11vw, 164px);
+  margin-top: 20px;
+  padding: 20px;
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+  p {
+    max-width: 84ch;
+    font-size: 19px;
+  }
+}
